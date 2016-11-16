@@ -18,16 +18,30 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - KISSmetrics-iOS-SDK (2.3.0)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - KISSmetrics-iOS-SDK (from `https://github.com/peteoleary/KISSmetrics-iOS-SDK.git`)
   - SDWebImage (~> 3.6)
+
+EXTERNAL SOURCES:
+  KISSmetrics-iOS-SDK:
+    :git: https://github.com/peteoleary/KISSmetrics-iOS-SDK.git
+
+CHECKOUT OPTIONS:
+  KISSmetrics-iOS-SDK:
+    :commit: d8f7315121574f325015e7df0dd8016ab2d27b13
+    :git: https://github.com/peteoleary/KISSmetrics-iOS-SDK.git
 
 SPEC CHECKSUMS:
   AFNetworking: caca0799b310f0c3bf1fc1af45145fc96972bcab
+  KISSmetrics-iOS-SDK: 8217d5fe1c3863816fc8c538bca0da1973f21f3c
   SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
 
-COCOAPODS: 0.37.1
+PODFILE CHECKSUM: ccfd114c53d9f2eae00cfc56fdca38a7165530e3
+
+COCOAPODS: 1.1.1

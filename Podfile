@@ -1,6 +1,7 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 
-pod 'SDWebImage', '~>3.6'
-
-pod "AFNetworking"
-
+target 'Movies' do
+	pod 'SDWebImage', '~>3.6'
+	pod "AFNetworking"
+    pod 'KISSmetrics-iOS-SDK', :git => 'https://github.com/peteoleary/KISSmetrics-iOS-SDK.git'
+end
