@@ -5,3 +5,9 @@ target 'Movies' do
 	pod "AFNetworking"
     pod 'KISSmetrics-iOS-SDK', :git => 'https://github.com/peteoleary/KISSmetrics-iOS-SDK.git'
 end
+
+plugin 'cocoapods-keys', {
+    :project => "Movies",
+    :keys => [
+    "KMTrackingAPIKey"
+    ]}

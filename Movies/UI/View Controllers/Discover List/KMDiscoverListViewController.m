@@ -14,6 +14,8 @@
 #import "KMMovie.h"
 #import "KMMovieDetailsViewController.h"
 
+#import "KISSmetrics-iOS-SDK/KISSmetricsAPI.h"
+
 @interface KMDiscoverListViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
@@ -148,7 +150,11 @@
     
     [self.navigationController pushViewController:viewController animated:YES];
     
-    viewController.movieDetails = [self.dataSource objectAtIndex:indexPath.row];
+    KMMovie * movieDetails = [self.dataSource objectAtIndex:indexPath.row];
+    
+    [[KISSmetricsAPI sharedAPI] record:@"/content_view" withProperties: @{ @"Content Name": movieDetails.movieTitle}];
+    
+    viewController.movieDetails = movieDetails;
 }
 
 #pragma mark - KMNetworkLoadingViewController Methods

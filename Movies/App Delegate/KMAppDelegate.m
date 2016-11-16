@@ -10,6 +10,10 @@
 #import "KMStoryBoardUtilities.h"
 #import "KMDiscoverListViewController.h"
 
+#import "KISSmetrics-iOS-SDK/KISSmetricsAPI.h"
+
+#import <Keys/MoviesKeys.h>
+
 @implementation KMAppDelegate
 
 #pragma mark -
@@ -17,6 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    MoviesKeys *keys = [[MoviesKeys alloc] init];
+    
+    [KISSmetricsAPI sharedAPIWithKey:keys.kMTrackingAPIKey];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UINavigationController* navigationController = (UINavigationController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMDiscoverStoryboard" class:[KMDiscoverListViewController class]];
@@ -29,6 +37,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[KISSmetricsAPI sharedAPI] record:@"/app_launched"];
+    
     return YES;
 }
 
